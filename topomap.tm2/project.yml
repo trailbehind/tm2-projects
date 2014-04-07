@@ -8,16 +8,16 @@ bounds:
   - 180
   - 85.0511
 center: 
-  - -120.14674186706543
-  - 38.87551553603575
-  - 15
+  - -120.69477081298828
+  - 38.38425671321536
+  - 13
 description: ''
 format: "png8:m=h"
 interactivity_layer: ''
 layers: null
 maxzoom: 22
 minzoom: 0
-mtime: 1396798961447
+mtime: 1396907110466
 name: topo map
 scale: 1
 source: "mapbox:///mapbox.mapbox-terrain-v1,mapbox.mapbox-streets-v4"

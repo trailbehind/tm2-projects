@@ -159,20 +159,8 @@ Map {
 
 #road, #bridge, #tunnel {
   ['mapnik::geometry_type'=2] {
-    [class='motorway'],
-    [class='main'] {
-          line-color:@road_color;
-	    line-width: 0.5;
-      [zoom>=10] { line-width: 1; }
-      [zoom>=12] { line-width: 2; }
-      [zoom>=14] { line-width: 3; }
-    }
-    [class='street'][zoom>=14],
-    [class='street_limited'][zoom>=14] {
-          line-color: @road_color;
-    	line-width: 0.5;
-      [zoom>=14] { line-width: 1; }
-    }
-  }
+        line-color:@road_color;
+	    line-width: 1.0;
+	}
 }
 

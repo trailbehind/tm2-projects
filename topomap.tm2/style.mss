@@ -7,8 +7,43 @@
 @contour_line: #B76536;
 @contour_text_halo: #ffffff;
 
+//background colors
 Map {
   background-color:#fff;
+}
+
+#landcover {
+  [class='wood'] {
+	  polygon-fill:#D7F8B3;
+  }
+  [class='scrub'] {
+	polygon-fill:lighten(#D7F8B3, 10%);
+    //    polygon-pattern-file:url('scrub-fill.png');
+  }
+  [class='snow'] {
+    polygon-fill: #EBF7FF;
+  }
+//  [class = 'crop'] {  polygon-pattern-file:url('orchard-fill.png');}
+}
+
+#hillshade[zoom <= 12] {
+  polygon-opacity:.3;
+  [class='full_shadow'] {
+  	polygon-fill:#aaaaaa;
+  }
+  [class='medium_shadow'] {
+  	polygon-fill:#cccccc;  
+  }
+  [class='medium_highlight'] {
+  	polygon-fill:#dddddd;  
+  }
+  [class='full_highlight'] {
+  	polygon-fill:#eeeeee
+  }
+}
+
+#building[zoom >= 14] {
+  polygon-fill:black;
 }
 
 #contour {
@@ -29,31 +64,17 @@ Map {
   }
 }
 
-#landcover {
-  [class='wood'] {
-	  polygon-fill:#D7F8B3;
-  }
-  [class='scrub'] {
-  	polygon-fill: #ECF5E9; 
-  }
-}
-
 // Political boundaries //
 
 #admin [maritime != 1]{
-  line-join: round;
   line-color: #bbe;
   // Countries
   [admin_level=2] {
-    line-width: 1.4;
-    [zoom>=6] { line-width: 2; }
-    [zoom>=8] { line-width: 4; }
-    [disputed=1] { line-dasharray: 4,4; }
+    line-width: 2;
   }
   // States / Provices / Subregions
   [admin_level>=3] {
-    line-width: 0.4;
-    line-dasharray: 10,3,3,3;
+    line-width: 1;
     [zoom>=6] { line-width: 1; }
     [zoom>=8] { line-width: 2; }
     [zoom>=12] { line-width: 3; }
@@ -95,8 +116,8 @@ Map {
     text-face-name: 'Source Sans Pro Semibold';
     text-fill: #444;
     text-size: 16;
-    text-wrap-width: 100;
-    text-wrap-before: true;
+    text-halo-fill:@contour_text_halo;
+  	text-halo-radius:2;
     [zoom>=10] { text-size: 18; }
     [zoom>=12] { text-size: 24; }
   }
@@ -105,8 +126,8 @@ Map {
     text-face-name: 'Source Sans Pro Regular';
     text-fill: #333;
     text-size: 14;
-    text-wrap-width: 100;
-    text-wrap-before: true;
+    text-halo-fill:@contour_text_halo;
+  	text-halo-radius:2;
     [zoom>=10] { text-size: 16; }
     [zoom>=12] { text-size: 20; }
   }
@@ -115,8 +136,8 @@ Map {
     text-face-name: 'Source Sans Pro Regular';
     text-fill: #444;
     text-size: 12;
-    text-wrap-width: 100;
-    text-wrap-before: true;
+     text-halo-fill:@contour_text_halo;
+  	text-halo-radius:2;
     [zoom>=12] { text-size: 14; }
     [zoom>=14] { text-size: 18; }
   }
@@ -127,8 +148,8 @@ Map {
     text-face-name: 'Source Sans Pro Regular';
     text-fill: #666;
     text-size: 12;
-    text-wrap-width: 100;
-    text-wrap-before: true;
+    text-halo-fill:@contour_text_halo;
+  	text-halo-radius:2;
     [zoom>=14] { text-size: 14; }
     [zoom>=16] { text-size: 16; }
   }
@@ -143,14 +164,12 @@ Map {
 }
 
 #water_label {
-  [zoom<=13][area>10000],  // automatic area filtering @ low zooms
-  [zoom>=14]{
+  [zoom<=12][area>10000],  // automatic area filtering @ low zooms
+  [zoom>=13]{
     text-name: @name;
     text-face-name: 'Source Sans Pro Italic';
     text-fill: darken(@water, 30%);
     text-size: 13;
-    text-wrap-width: 100;
-    text-wrap-before: true;
   }
 }
 
@@ -172,6 +191,13 @@ Map {
   }
 }
 
+#waterway_label {
+    text-name: @name;
+    text-face-name: 'Source Sans Pro Italic';
+    text-fill: darken(@water, 30%);
+    text-size: 13;
+}
+
 
 // Landuse areas //
 
@@ -189,8 +215,6 @@ Map {
       text-face-name: 'Source Sans Pro Italic';
       text-fill: darken(@park, 50%);
       text-size: 13;
-      text-wrap-width: 100;
-      text-wrap-before: true;
     }
   }
 }
@@ -200,9 +224,9 @@ Map {
 
 #tunnel { opacity: 0.5; }
 
-#road[zoom > 5],
-#tunnel[zoom >5],
-#bridge[zoom > 5] {
+#road[zoom >= 5],
+#tunnel[zoom >= 5],
+#bridge[zoom >= 5] {
   ['mapnik::geometry_type'=2] {
     line-color: black;
     line-width: 1;
@@ -241,6 +265,14 @@ Map {
   }
 }
 
-#building[zoom >= 14] {
-  polygon-fill:black;
-  }
+#road_label {
+  [class="path"] {
+     text-name: @name;
+      text-face-name: 'Source Sans Pro Italic';
+      text-fill: black;
+      text-size: 11;
+      text-wrap-width: 100;
+      text-wrap-before: true;
+    }
+}
+
