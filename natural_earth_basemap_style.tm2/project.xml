@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Map[]>
+<Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over" background-color="#ffffff" maximum-extent="-20037508.34,-20037508.34,20037508.34,20037508.34">
+
+<Parameters>
+  <Parameter name="attribution"><![CDATA[http://www.naturalearthdata.com/about/]]></Parameter>
+  <Parameter name="bounds">-180,-85.0511,180,85.0511</Parameter>
+  <Parameter name="center">-121.97021484374999,39.884450178234395,6</Parameter>
+  <Parameter name="format">png8:m=h</Parameter>
+  <Parameter name="maxzoom">22</Parameter>
+  <Parameter name="minzoom">0</Parameter>
+  <Parameter name="name"><![CDATA[Natural Earth Basemap]]></Parameter>
+  <Parameter name="scale">1</Parameter>
+  <Parameter name="source"><![CDATA[tmsource:///Users/jesse/projects/Vector_Tiles/natural_earth_basemap_tiles.tm2]]></Parameter>
+</Parameters>
+
+
+<Style name="rivers" filter-mode="first">
+  <Rule>
+    <LineSymbolizer stroke="#a0c8f0" stroke-width="1" />
+  </Rule>
+</Style>
+<Layer name="rivers"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>rivers</StyleName>  </Layer>
+
+<Style name="lakes" filter-mode="first">
+  <Rule>
+    <PolygonSymbolizer fill="#a0c8f0" />
+  </Rule>
+</Style>
+<Layer name="lakes"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>lakes</StyleName>  </Layer>
+
+<Style name="states" filter-mode="first">
+  <Rule>
+    <LineSymbolizer stroke="#000000" stroke-width="1" />
+  </Rule>
+</Style>
+<Layer name="states"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>states</StyleName>  </Layer>
+
+<Style name="admin" filter-mode="first">
+  <Rule>
+    <LineSymbolizer stroke-width="2" stroke="#000000" />
+  </Rule>
+</Style>
+<Layer name="admin"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>admin</StyleName>  </Layer>
+
+<Style name="oceans" filter-mode="first">
+  <Rule>
+    <PolygonSymbolizer fill="#a0c8f0" />
+  </Rule>
+</Style>
+<Layer name="oceans"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>oceans</StyleName>  </Layer>
+
+</Map>

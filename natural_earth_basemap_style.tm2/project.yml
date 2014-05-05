@@ -1,0 +1,27 @@
+_prefs: 
+  baselayer: ''
+  saveCenter: true
+_properties: {}
+attribution: "http://www.naturalearthdata.com/about/"
+bounds: 
+  - -180
+  - -85.0511
+  - 180
+  - 85.0511
+center: 
+  - -121.97021484374999
+  - 39.884450178234395
+  - 6
+description: ''
+format: "png8:m=h"
+interactivity_layer: ''
+layers: null
+maxzoom: 22
+minzoom: 0
+mtime: 1399326122877
+name: Natural Earth Basemap
+scale: 1
+source: "tmsource:///Users/jesse/projects/Vector_Tiles/natural_earth_basemap_tiles.tm2"
+styles: 
+  - style.mss
+template: ''

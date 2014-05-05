@@ -1,0 +1,122 @@
+_prefs: 
+  disabled: []
+  inspector: false
+  saveCenter: true
+attribution: ''
+center: 
+  - -130.95703125
+  - -14.859850400601037
+  - 3
+description: ''
+Layer: 
+  - id: rivers
+    Datasource: 
+      file: ne_10m_rivers_lake_centerlines.shp
+      type: shape
+    description: ''
+    fields: 
+      dissolve: String
+      featurecla: String
+      name: String
+      name_alt: String
+      note: String
+      rivernum: Number
+      scalerank: Number
+    properties: 
+      "buffer-size": 0
+      maxzoom: 22
+      minzoom: 4
+    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
+  - id: lakes
+    Datasource: 
+      file: ne_10m_lakes.shp
+      type: shape
+    description: ''
+    fields: 
+      admin: String
+      dam_name: String
+      delta: String
+      featurecla: String
+      name: String
+      name_abb: String
+      name_alt: String
+      note: String
+      scalerank: Number
+      year: Number
+    properties: 
+      "buffer-size": 0
+      maxzoom: 22
+      minzoom: 0
+    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
+  - id: states
+    Datasource: 
+      file: ne_10m_admin_1_states_provinces_lines_shp.shp
+      type: shape
+    description: ''
+    fields: 
+      adm0_a3: String
+      adm0_name: String
+      featurecla: String
+      mapcolor13: Number
+      mapcolor9: Number
+      name: String
+      name_alt_l: String
+      name_alt_r: String
+      name_l: String
+      name_len_l: Number
+      name_len_r: Number
+      name_loc_l: String
+      name_loc_r: String
+      name_r: String
+      note: String
+      scalerank: Number
+      shape_leng: Number
+      sov_a3: String
+    properties: 
+      "buffer-size": 0
+      maxzoom: 22
+      minzoom: 3
+    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
+  - id: admin
+    Datasource: 
+      file: ne_10m_admin_0_boundary_lines_land.shp
+      type: shape
+    description: ''
+    fields: 
+      adm0_a3_l: String
+      adm0_a3_r: String
+      adm0_left: String
+      adm0_right: String
+      adm0_usa: Number
+      comment: String
+      featurecla: String
+      FID_ne_10m: Number
+      labelrank: Number
+      name: String
+      note_: String
+      scalerank: Number
+      sov_a3_l: String
+      sov_a3_r: String
+      type: String
+    properties: 
+      "buffer-size": 0
+      maxzoom: 22
+      minzoom: 2
+    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
+  - id: oceans
+    Datasource: 
+      file: ne_10m_ocean.shp
+      type: shape
+    description: ''
+    fields: 
+      featurecla: String
+      scalerank: Number
+    properties: 
+      "buffer-size": 0
+      maxzoom: 22
+      minzoom: 0
+    srs: +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs
+maxzoom: 6
+minzoom: 0
+mtime: 1399320930864
+name: ne_oceans

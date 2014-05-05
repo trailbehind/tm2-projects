@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Map[]>
+<Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over" maximum-extent="-20037508.34,-20037508.34,20037508.34,20037508.34">
+
+<Parameters>
+  <Parameter name="center">-130.95703125,-14.859850400601037,3</Parameter>
+  <Parameter name="format">pbf</Parameter>
+  <Parameter name="json"><![CDATA[{"vector_layers":[{"id":"rivers","description":"","minzoom":4,"maxzoom":22,"fields":{"dissolve":"String","scalerank":"Number","featurecla":"String","name":"String","name_alt":"String","rivernum":"Number","note":"String"}},{"id":"lakes","description":"","minzoom":0,"maxzoom":22,"fields":{"featurecla":"String","scalerank":"Number","name":"String","name_abb":"String","name_alt":"String","note":"String","delta":"String","dam_name":"String","year":"Number","admin":"String"}},{"id":"states","description":"","minzoom":3,"maxzoom":22,"fields":{"scalerank":"Number","featurecla":"String","name":"String","adm0_a3":"String","adm0_name":"String","shape_leng":"Number","mapcolor13":"Number","mapcolor9":"Number","sov_a3":"String","name_l":"String","name_r":"String","name_alt_l":"String","name_alt_r":"String","name_loc_l":"String","name_loc_r":"String","name_len_l":"Number","name_len_r":"Number","note":"String"}},{"id":"admin","description":"","minzoom":2,"maxzoom":22,"fields":{"FID_ne_10m":"Number","scalerank":"Number","featurecla":"String","note_":"String","name":"String","comment":"String","adm0_usa":"Number","adm0_left":"String","adm0_right":"String","adm0_a3_l":"String","adm0_a3_r":"String","sov_a3_l":"String","sov_a3_r":"String","type":"String","labelrank":"Number"}},{"id":"oceans","description":"","minzoom":0,"maxzoom":22,"fields":{"featurecla":"String","scalerank":"Number"}}]}]]></Parameter>
+  <Parameter name="maxzoom">6</Parameter>
+  <Parameter name="minzoom">0</Parameter>
+  <Parameter name="name"><![CDATA[ne_oceans]]></Parameter>
+</Parameters>
+
+
+<Layer name="rivers"
+  buffer-size="0"
+  minzoom="100"
+  maxzoom="50000000"
+  srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+    
+    <Datasource>
+       <Parameter name="file"><![CDATA[ne_10m_rivers_lake_centerlines.shp]]></Parameter>
+       <Parameter name="type"><![CDATA[shape]]></Parameter>
+    </Datasource>
+  </Layer>
+
+<Layer name="lakes"
+  buffer-size="0"
+  minzoom="100"
+  maxzoom="1000000000"
+  srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+    
+    <Datasource>
+       <Parameter name="file"><![CDATA[ne_10m_lakes.shp]]></Parameter>
+       <Parameter name="type"><![CDATA[shape]]></Parameter>
+    </Datasource>
+  </Layer>
+
+<Layer name="states"
+  buffer-size="0"
+  minzoom="100"
+  maxzoom="100000000"
+  srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+    
+    <Datasource>
+       <Parameter name="file"><![CDATA[ne_10m_admin_1_states_provinces_lines_shp.shp]]></Parameter>
+       <Parameter name="type"><![CDATA[shape]]></Parameter>
+    </Datasource>
+  </Layer>
+
+<Layer name="admin"
+  buffer-size="0"
+  minzoom="100"
+  maxzoom="200000000"
+  srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+    
+    <Datasource>
+       <Parameter name="file"><![CDATA[ne_10m_admin_0_boundary_lines_land.shp]]></Parameter>
+       <Parameter name="type"><![CDATA[shape]]></Parameter>
+    </Datasource>
+  </Layer>
+
+<Layer name="oceans"
+  buffer-size="0"
+  minzoom="100"
+  maxzoom="1000000000"
+  srs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs">
+    
+    <Datasource>
+       <Parameter name="file"><![CDATA[ne_10m_ocean.shp]]></Parameter>
+       <Parameter name="type"><![CDATA[shape]]></Parameter>
+    </Datasource>
+  </Layer>
+
+</Map>
